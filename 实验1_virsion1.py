@@ -52,19 +52,19 @@ for word in new_wordlist:
                     if postag[k + 3][1][0] == 'N':
                         if postag[k + 4][1][0] == 'N':
                             if postag[k + 5][1][0] == 'N':
-                                print('-', postag[k][0], postag[k + 1][0], postag[k + 2][0], postag[k + 3][0], postag[k + 4][0],postag[k + 5][0], num, ' ', end='')
+                                print("-%s%s%s%s%s%s"%(postag[k][0], postag[k + 1][0], postag[k + 2][0], postag[k + 3][0], postag[k + 4][0],postag[k + 5][0]), num, ' ', end='')
                                 max_np[wordnum] = 6
                             else:
-                                print('-', postag[k][0], postag[k + 1][0], postag[k + 2][0], postag[k + 3][0],postag[k + 4][0], num, ' ', end='')
+                                print("-%s%s%s%s%s"%(postag[k][0], postag[k + 1][0], postag[k + 2][0], postag[k + 3][0],postag[k + 4][0]), num, ' ', end='')
                                 max_np[wordnum] = max(max_np[wordnum], 5)
                         else:
-                            print('-', "%s%s%s%s"%(postag[k][0], postag[k + 1][0], postag[k + 2][0], postag[k + 3][0]), num, ' ', end='')
+                            print("-%s%s%s%s"%(postag[k][0], postag[k + 1][0], postag[k + 2][0], postag[k + 3][0]), num, ' ', end='')
                             max_np[wordnum] = max(max_np[wordnum], 4)
                     else:
-                        print('-', postag[k][0],postag[k + 1][0], postag[k + 2][0], num, ' ', end = '')
+                        print("-%s%s%s"%(postag[k][0],postag[k + 1][0], postag[k + 2][0]), num, ' ', end = '')
                         max_np[wordnum] = max(max_np[wordnum], 3)
                 else:
-                    print('-', postag[k][0], postag[k + 1][0], num, ' ', end = '')
+                    print("-%s%s"%(postag[k][0], postag[k + 1][0]), num, ' ', end = '')
                     max_np[wordnum] = max(max_np[wordnum], 2)
             else:
                 print('-', postag[k][0], num, ' ', end ='')
