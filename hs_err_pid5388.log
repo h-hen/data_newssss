@@ -1,0 +1,151 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=5388, tid=6188
+#
+# JRE version:  (8.0_60-b27) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.60-b23 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000002be2800):  JavaThread "Unknown thread" [_thread_in_vm, id=6188, stack(0x0000000002ae0000,0x0000000002be0000)]
+
+Stack: [0x0000000002ae0000,0x0000000002be0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000002be2800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=6188, stack(0x0000000002ae0000,0x0000000002be0000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 38400K, used 665K [0x000000076ab00000, 0x000000076d580000, 0x00000007c0000000)
+  eden space 33280K, 2% used [0x000000076ab00000,0x000000076aba6670,0x000000076cb80000)
+  from space 5120K, 0% used [0x000000076d080000,0x000000076d080000,0x000000076d580000)
+  to   space 5120K, 0% used [0x000000076cb80000,0x000000076cb80000,0x000000076d080000)
+ ParOldGen       total 87552K, used 0K [0x00000006c0000000, 0x00000006c5580000, 0x000000076ab00000)
+  object space 87552K, 0% used [0x00000006c0000000,0x00000006c0000000,0x00000006c5580000)
+ Metaspace       used 743K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 75K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x00000000120a0000,0x00000000128b0000] byte_map_base: 0x000000000eaa0000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000077d7a5b0
+ Begin Bits: [0x0000000013810000, 0x0000000017810000)
+ End Bits:   [0x0000000017810000, 0x000000001b810000)
+
+Polling page: 0x0000000000800000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x0000000002ce0000, 0x0000000002f50000, 0x0000000011ce0000]
+ total_blobs=57 nmethods=0 adapters=37
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.033 loading class java/lang/Short
+Event: 0.033 loading class java/lang/Short done
+Event: 0.033 loading class java/lang/Integer
+Event: 0.034 loading class java/lang/Integer done
+Event: 0.034 loading class java/lang/Long
+Event: 0.034 loading class java/lang/Long done
+Event: 0.034 loading class java/lang/NullPointerException
+Event: 0.034 loading class java/lang/NullPointerException done
+Event: 0.034 loading class java/lang/ArithmeticException
+Event: 0.034 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff679110000 - 0x00007ff679147000 	C:\ProgramData\Oracle\Java\javapath\java.exe
+0x00007fff1ba50000 - 0x00007fff1bc45000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fff1b820000 - 0x00007fff1b8dd000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fff19290000 - 0x00007fff19558000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fff1a840000 - 0x00007fff1a8ec000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fff1a4e0000 - 0x00007fff1a57e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fff19ce0000 - 0x00007fff19d7b000 	C:\WINDOWS\System32\sechost.dll
+0x00007fff1b2a0000 - 0x00007fff1b3cb000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fff1a580000 - 0x00007fff1a720000 	C:\WINDOWS\System32\USER32.dll
+0x00007fff19190000 - 0x00007fff191b2000 	C:\WINDOWS\System32\win32u.dll
+0x00007fff1a300000 - 0x00007fff1a32a000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fff195e0000 - 0x00007fff196eb000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fff191f0000 - 0x00007fff1928d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fff19900000 - 0x00007fff19a00000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffefdbc0000 - 0x00007ffefde5a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.844_none_ca00b6081b84eb1d\COMCTL32.dll
+0x00007fff1a3c0000 - 0x00007fff1a3f0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00000000500e0000 - 0x00000000501b2000 	D:\java\Jre1.8.0_60\bin\msvcr100.dll
+0x0000000077570000 - 0x0000000077df9000 	D:\java\Jre1.8.0_60\bin\server\jvm.dll
+0x00007fff1a3a0000 - 0x00007fff1a3a8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007fff03b60000 - 0x00007fff03b87000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fff18cb0000 - 0x00007fff18cba000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fff002b0000 - 0x00007fff002b9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007fff1a3f0000 - 0x00007fff1a45b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00000000500d0000 - 0x00000000500df000 	D:\java\Jre1.8.0_60\bin\verify.dll
+0x00000000500a0000 - 0x00000000500c9000 	D:\java\Jre1.8.0_60\bin\java.dll
+0x0000000050080000 - 0x0000000050096000 	D:\java\Jre1.8.0_60\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Xmx4g 
+java_command: edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9005
+java_class_path (initial): D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\ejml-0.23.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\javax.activation-api-1.2.0-sources.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\javax.activation-api-1.2.0.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\javax.json-api-1.0-sources.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\javax.json.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\jaxb-api-2.4.0-b180830.0359-sources.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\jaxb-api-2.4.0-b180830.0359.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\jaxb-core-2.3.0.1-sources.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\jaxb-core-2.3.0.1.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\jaxb-impl-2.4.0-b180830.0438-sources.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\jaxb-impl-2.4.0-b180830.0438.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\joda-time-2.9-sources.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\joda-time.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\jollyday-0.4.9-sources.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\jollyday.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\protobuf.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\slf4j-api.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\slf4j-simple.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanford-corenlp-full-2018-10-05\stanford-chinese-corenlp-2018-10-05-models.jar;D:\Desktop\大二下期文件\数据新闻\实验工具\stanf
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=D:\java\jdk1.8.0_60
+CLASSPATH=.;D:\java\jdk1.8.0_60\lib\dt.jar;D:\java\jdk1.8.0_60\lib\tools.jar;
+PATH=D:\python_test\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\AI-environment\Git\cmd;D:\Anaconda3\Library\bin;D:\Anaconda3;D:\Anaconda3\Scripts;D:\git\Git\cmd;D:\java\jdk1.8.0_60\bin;D:\java\jdk1.8.0_60\jre\bin;C:\Users\13400\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\13400\AppData\Local\Programs\Python\Python38\;D:\python3.9\Scripts\;D:\python3.9\;D:\Scripts\;D:\;C:\Users\13400\AppData\Local\Microsoft\WindowsApps;;D:\Microsoft VS Code\bin;D:\PyCharm Community Edition 2020.2.3\bin;;D:\PyCharm 2020.2.3\bin;
+USERNAME=13400
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.928)
+
+CPU:total 12 (6 cores per cpu, 2 threads per core) family 6 model 158 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8276260k(3369452k free), swap 23821260k(4424k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.60-b23) for windows-amd64 JRE (1.8.0_60-b27), built on Aug  4 2015 11:06:27 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Mon May 10 09:37:30 2021
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
