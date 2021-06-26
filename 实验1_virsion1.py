@@ -41,7 +41,6 @@ print('|'.join([','.join(i) for i in postag]))
 
 
 #找到不重复名词短语
-
 wordlist = set()#无序
 wordcount = []
 for j in postag:
@@ -87,8 +86,7 @@ for word in new_wordlist: #遍历所有符合要求的词，寻找最长np，并
             list.append((updata_word,num))
             max_np[wordnum] = max(max_np[wordnum], num_np)
         num = num + 1
-        #k = k + num_np #调整序号，防止连续的
-    print(wordnum, word,':\n', list) #输出词汇链
+    print(wordnum, word, ':\n', list) #输出词汇链
     word_list.append(list) #将词汇链加进对应的word_list中
     index = index + 1
     wordnum = wordnum + 1
@@ -115,31 +113,50 @@ for i in range(len(word_list)):
         max_np_list = word_list[i]
         print("%d : "%(i), max_np_list)
 
-print('分析事件链：')
-event_list = []
+
+print('\n分析事件链')
+event_list = []#事件链表
+trigger_list = []#触发词表
+event_elements_list = []#事件要素链
 for list in word_list:
     the_event_list = []
+    the_trigger_list = []
+    the_elements_list = []
     for word in list:
-        event_word = word[0]
+        #event_word = word[0]
+        elements = word[0]
         for k in range(word[1] + 1, len(postag) - 1):
             flag = 0 #是否已经遇到了N
             if postag[k][1] == 'VV':
-                event_word = event_word + postag[k][0]  # 将np与动词连接起来
+                event_word = postag[k][0]
+                trigger = postag[k][0]
+                if postag[k - 1][1] == 'AD':
+                    trigger = postag[k - 1][0] + postag[k][0]
+                elements = elements + trigger  # 将np与动词连接起来
                 for j in range(k + 1, len(postag) - 1):
-                    if postag[j][1][0] == 'N':
-                        flag = 1
-                        event_word = event_word + postag[j][0]
-                    elif postag[j][1] == 'VV':
+                    if postag[j][1][0] == 'PU':#遇到标点符号停顿停止
                         break
-                    elif flag == 1:
+                    if postag[j][1][0] == 'N':#遇到名词事件要素加上
+                        flag = 1
+                        elements = elements + postag[j][0]
+                    elif postag[j][1] == 'VV':#遇到动词加上，并补充轻动词
+                        if postag[j - 1][1] == 'AD':
+                            elements = elements + postag[j - 1][0] + postag[j][0]
                         break
                 break
         the_event_list.append(event_word)
+        the_elements_list.append(elements)
+        the_trigger_list.append(trigger)
     event_list.append(the_event_list)
+    event_elements_list.append(the_elements_list)
+    trigger_list.append(the_trigger_list)
+
 #输出事件链
-print("\n得到事件链如下：")
+print("\n得到事件链、复杂触发词、事件要素如下：")
 for i in range(len(event_list)):
-    print("%d : "%i, event_list[i])
+    print("\n%d: 事件链 " % i, event_list[i])
+    print("%d: 复杂触发词 " % i, trigger_list[i])
+    print("%d: 事件要素" % i, event_elements_list[i])
 
 
 
